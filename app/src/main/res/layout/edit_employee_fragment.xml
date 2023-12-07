@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/origConstraintLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditEmployeeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/saveButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <Spinner
+                android:id="@+id/spinnerSun"
+                android:layout_width="170dp"
+                android:layout_height="35dp"
+                android:entries="@array/weekdays"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:popupBackground="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvSunday"
+                app:layout_constraintTop_toBottomOf="@id/spinnerSat" />
+
+            <Spinner
+                android:id="@+id/spinnerSat"
+                android:layout_width="170dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="16dp"
+                android:entries="@array/weekdays"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:popupBackground="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/spinnerSun"
+                app:layout_constraintStart_toEndOf="@id/tvSaturday"
+                app:layout_constraintTop_toBottomOf="@id/spinnerFri"
+                tools:layout_editor_absoluteX="189dp" />
+
+            <Spinner
+                android:id="@+id/spinnerFri"
+                android:layout_width="170dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="16dp"
+                android:entries="@array/weekdays"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:popupBackground="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/spinnerSat"
+                app:layout_constraintStart_toEndOf="@id/tvFriday"
+                app:layout_constraintTop_toBottomOf="@id/spinnerThu"
+                tools:layout_editor_absoluteX="189dp" />
+
+            <Spinner
+                android:id="@+id/spinnerThu"
+                android:layout_width="170dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="16dp"
+                android:entries="@array/weekdays"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:popupBackground="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/spinnerFri"
+                app:layout_constraintStart_toEndOf="@id/tvThursday"
+                app:layout_constraintTop_toBottomOf="@id/spinnerWed"
+                tools:layout_editor_absoluteX="189dp" />
+
+            <Spinner
+                android:id="@+id/spinnerTue"
+                android:layout_width="170dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="16dp"
+                android:entries="@array/weekdays"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:popupBackground="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/spinnerWed"
+                app:layout_constraintStart_toEndOf="@id/tvTuesday"
+                app:layout_constraintTop_toBottomOf="@id/spinnerMon"
+                tools:layout_editor_absoluteX="189dp" />
+
+            <Spinner
+                android:id="@+id/spinnerMon"
+                android:layout_width="170dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:entries="@array/weekdays"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:popupBackground="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/spinnerTue"
+                app:layout_constraintStart_toEndOf="@id/tvMonday"
+                app:layout_constraintTop_toBottomOf="@+id/tvAvailability"
+                tools:layout_editor_absoluteX="189dp" />
+
+            <Spinner
+                android:id="@+id/spinnerWed"
+                android:layout_width="170dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="16dp"
+                android:entries="@array/weekdays"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:popupBackground="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/spinnerThu"
+                app:layout_constraintStart_toEndOf="@id/tvWednesday"
+                app:layout_constraintTop_toBottomOf="@id/spinnerTue"
+                tools:layout_editor_absoluteX="189dp" />
+
+            <TextView
+                android:id="@+id/tvSunday"
+                android:layout_width="187dp"
+                android:layout_height="34dp"
+                android:text="Sunday"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/spinnerSun"
+                app:layout_constraintTop_toBottomOf="@id/tvSaturday" />
+
+            <TextView
+                android:id="@+id/tvSaturday"
+                android:layout_width="187dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="16dp"
+                android:text="Saturday"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvSunday"
+                app:layout_constraintEnd_toStartOf="@+id/spinnerSat"
+                app:layout_constraintTop_toBottomOf="@id/tvFriday" />
+
+            <TextView
+                android:id="@+id/tvFriday"
+                android:layout_width="187dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="16dp"
+                android:text="Friday"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvSaturday"
+                app:layout_constraintEnd_toStartOf="@+id/spinnerFri"
+                app:layout_constraintTop_toBottomOf="@id/tvThursday" />
+
+            <TextView
+                android:id="@+id/tvThursday"
+                android:layout_width="187dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="16dp"
+                android:text="Thursday"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvFriday"
+                app:layout_constraintEnd_toStartOf="@+id/spinnerThu"
+                app:layout_constraintTop_toBottomOf="@id/tvWednesday" />
+
+            <TextView
+                android:id="@+id/tvWednesday"
+                android:layout_width="187dp"
+                android:layout_height="34dp"
+                android:layout_marginBottom="16dp"
+                android:text="Wednesday"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvThursday"
+                app:layout_constraintEnd_toStartOf="@+id/spinnerWed"
+                app:layout_constraintTop_toBottomOf="@id/tvTuesday" />
+
+            <TextView
+                android:id="@+id/tvTuesday"
+                android:layout_width="187dp"
+                android:layout_height="34dp"
+                android:layout_marginBottom="16dp"
+                android:text="Tuesday"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvWednesday"
+                app:layout_constraintEnd_toStartOf="@+id/spinnerTue"
+                app:layout_constraintTop_toBottomOf="@id/tvMonday" />
+
+            <TextView
+                android:id="@+id/tvMonday"
+                android:layout_width="187dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="16dp"
+                android:text="Monday"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvTuesday"
+                app:layout_constraintEnd_toStartOf="@+id/spinnerMon"
+                app:layout_constraintTop_toBottomOf="@+id/tvAvailability" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="96dp"
+                android:layout_height="77dp"
+                android:src="@drawable/profile_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Personal Info"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etFirstName"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="First Name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="First Name"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etLastName"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Last Name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etFirstName">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Last Name"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etNickname"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Nickname"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etLastName">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nickname"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etPhoneNumber"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Phone Number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etNickname">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Phone Number"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etEmail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etPhoneNumber">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvAvailability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="96dp"
+                android:text="Availability"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.43"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spCertification" />
+
+            <TextView
+                android:id="@+id/tvCertification"
+                android:layout_width="140dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="76dp"
+                android:text="Certifications"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@id/spCertification"
+                app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+            <Spinner
+                android:id="@+id/spCertification"
+                android:layout_width="216dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="76dp"
+                android:entries="@array/certification"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:popupBackground="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/tvCertification"
+                app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:text="Confirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nestedScrollView"
+        app:layout_constraintBottom_toTopOf="@id/deleteButton"/>
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/design_default_color_error"
+        android:text="Delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/saveButton"
+        android:visibility="gone"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

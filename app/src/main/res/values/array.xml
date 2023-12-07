@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--These are the drop down menu options-->
+
+<resources>
+    <string-array name="weekdays">
+        <item>Unavailable</item>
+        <item>Morning</item>
+        <item>Afternoon</item>
+        <item>Both</item>
+    </string-array>
+
+    <string-array name="weekends">
+        <item>Unavailable</item>
+        <item>Full</item>
+    </string-array>
+
+    <string-array name="certification">
+        <item>None</item>
+        <item>Opening</item>
+        <item>Closing</item>
+    </string-array>
+</resources>
